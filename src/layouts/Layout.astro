@@ -1,70 +1,92 @@
 ---
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar.astro";
-import { SEO } from "astro-seo";
+import Footer from '@components/footer.astro'
+import Navbar from '@components/navbar.astro'
+import { SEO } from 'astro-seo'
+
 export interface Props {
-	title: string;
-	desc?: string;
+  title: string
+  desc?: string
 }
 
-const { title, desc } = Astro.props;
+const { title, desc } = Astro.props
 ---
 
 <script>
-	import LocomotiveScroll from "locomotive-scroll";
+  import LocomotiveScroll from 'locomotive-scroll'
 
-	const scroll = new LocomotiveScroll({
-		el: document.querySelector("[data-scroll-container]") as HTMLElement,
-		smooth: true,
-		resetNativeScroll: true,
-	});
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]') as HTMLElement,
+    smooth: true,
+    resetNativeScroll: true,
+  })
 
-	document.documentElement.setAttribute('lang', 'en');
+  document.documentElement.setAttribute('lang', 'en')
 </script>
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preload" as="style" href="/styles/global.css">
-		<link rel="preload" href="/fonts/pixelpowerline.ttf" as="font" type="font/opentype" crossorigin>
-		<link rel="stylesheet" href="/styles/global.css">
-		<SEO
-		title={title}
-		description={desc}
-		openGraph={
-			{
-				basic: {
-					title: (title),
-					type: desc ? desc : "",
-					image: "/logo.png",
-				},
-				article: {
-					authors: ["FTC VERTEX 15534"],
-				},
-				image: {
-					alt: "FTC VERTEX 15534",
-				},
-				optional: {
-					siteName: "FTC VERTEX 15534 of Phillips Exeter Academy",
-					locale: "en",
-				}
-			}
-		}
-		extend={{
-		  link: [{ rel: "icon", href: "/favicon.ico" }],
-		}}
-		/>
-	</head>
-	<body id="body">
-		<Navbar />
-		<div data-scroll-container>
-			<slot data-scroll-section />
-			<Footer data-scroll-section />
-		</div>
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/favicon.svg'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+    <link
+      rel='preload'
+      as='style'
+      href='/styles/global.css'
+    />
+    <link
+      rel='preload'
+      href='/fonts/pixelpowerline.ttf'
+      as='font'
+      type='font/opentype'
+      crossorigin
+    />
+    <link
+      rel='stylesheet'
+      href='/styles/global.css'
+    />
+    <SEO
+      title={title}
+      description={desc}
+      openGraph={{
+        basic: {
+          title: title,
+          type: desc ? desc : '',
+          image: '/logo.png',
+        },
+        article: {
+          authors: ['FTC VERTEX 15534'],
+        },
+        image: {
+          alt: 'FTC VERTEX 15534',
+        },
+        optional: {
+          siteName: 'FTC VERTEX 15534 of Phillips Exeter Academy',
+          locale: 'en',
+        },
+      }}
+      extend={{
+        link: [{ rel: 'icon', href: '/favicon.ico' }],
+      }}
+    />
+  </head>
+  <body id='body'>
+    <Navbar />
+    <div data-scroll-container>
+      <slot data-scroll-section />
+      <Footer data-scroll-section />
+    </div>
+  </body>
 </html>
 
 <style is:global></style>
