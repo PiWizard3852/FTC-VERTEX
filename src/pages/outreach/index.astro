@@ -1,0 +1,54 @@
+---
+import 'animate.css'
+
+import Layout from '../../layouts/Layout.astro'
+import instagram from '/instagram.svg'
+import lion from '/lion.svg'
+import mainLogo from '/logo.svg'
+import logoWithText from '/logoWithText.svg'
+
+// Asynchronously loads all .mdx blog outreach
+let posts = await Astro.glob('../../pages/outreach/*.mdx')
+// Filter out all the outreach with "draft: true" present in the frontmatter
+posts = posts.filter((post) => !post.frontmatter.draft)
+// Order all outreach in chronological order
+posts.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
+)
+---
+
+<Layout title='FTC VERTEX 15534'>
+  <main>
+    <div class='flex h-auto w-screen justify-center py-32'>
+      <div class='w-5/6 md:w-2/3'>
+        <h1 class='pb-8 text-center font-hype text-5xl md:text-9xl'>
+          OUTREACH
+        </h1>
+        <ul>
+          {
+            posts.map((post) => (
+              <li class='py-6'>
+                <a href={post.url}>
+                  <p class='font-display text-2xl font-bold md:text-3xl'>
+                    {post.frontmatter.title}
+                  </p>
+                </a>
+                <div class='text-md md:text-md pl-4 pt-2'>
+                  <p>{new Date(post.frontmatter.date).toLocaleDateString()}</p>
+                  <p>{post.frontmatter.desc}</p>
+                  <p class='text-neutral-500'>
+                    {post.frontmatter.tags
+                      ? post.frontmatter.tags.map((tag: any) => (
+                          <span class='pr-2'>{'#' + tag}</span>
+                        ))
+                      : ''}
+                  </p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,73 +1,92 @@
 ---
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar.astro";
-import { SEO } from "astro-seo";
+import Footer from '@components/footer.astro'
+import Navbar from '@components/navbar.astro'
+import { SEO } from 'astro-seo'
 
 export interface Props {
-	title: string;
+  title: string
 }
 
-const { frontmatter } = Astro.props;
-const date = new Date(frontmatter.date).toLocaleDateString();
+const { frontmatter } = Astro.props
+const date = new Date(frontmatter.date).toLocaleDateString()
 ---
 
 <script>
-	document.documentElement.setAttribute('lang', 'en');
+  document.documentElement.setAttribute('lang', 'en')
 </script>
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preload" as="style" href="/styles/global.css">
-		<link rel="preload" href="/fonts/pixelpowerline.ttf" as="font" type="font/opentype" crossorigin>
-		<link rel="stylesheet" href="/styles/global.css">
-		<SEO
-		title={frontmatter.title + " - VERTEX Robotics Phillips Exeter Academy"}
-		description={frontmatter.desc}
-		openGraph={
-			{
-				basic: {
-					title: (frontmatter.title),
-					type: frontmatter.desc ? frontmatter.desc : "",
-					image: "/logo.png",
-				},
-				article: {
-					authors: ["FTC VERTEX 15534", frontmatter.author],
-				},
-				image: {
-					alt: "FTC VERTEX 15534",
-				},
-				optional: {
-					siteName: "FTC VERTEX 15534 of Phillips Exeter Academy",
-					locale: "en",
-				}
-			}
-		}
-		extend={{
-		  // extending the default link tags
-		  link: [{ rel: "icon", href: "/favicon.ico" }],
-		  // extending the default meta tags
-		}}
-		/>
-	</head>
-	<body>
-		<Navbar />
-		<div>
-			<div class="flex h-auto min-h-screen w-screen justify-center">
-				<div
-					class="prose-inverse prose-lg h-auto w-full px-8 md:px-0 md:w-2/3 py-32 prose-headings:font-display prose-headings:font-bold prose-a:underline prose-a:underline-offset-2 prose-a:duration-200 hover:prose-a:text-red-500 hover:prose-a:underline-offset-4"
-				>
-					<h1 class="my-0">{frontmatter.title}</h1>
-					<i>{date}</i>
-					<slot />
-				</div>
-			</div>
-			<Footer/>
-		</div>
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/favicon.svg'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+    <link
+      rel='preload'
+      as='style'
+      href='/styles/global.css'
+    />
+    <link
+      rel='preload'
+      href='/fonts/pixelpowerline.ttf'
+      as='font'
+      type='font/opentype'
+      crossorigin
+    />
+    <link
+      rel='stylesheet'
+      href='/styles/global.css'
+    />
+    <SEO
+      title={frontmatter.title + ' - 15534 VERTEX'}
+      description={frontmatter.desc}
+      openGraph={{
+        basic: {
+          title: frontmatter.title,
+          type: frontmatter.desc ? frontmatter.desc : '',
+          image: '/logo.png',
+        },
+        article: {
+          authors: ['FTC VERTEX 15534', frontmatter.author],
+        },
+        image: {
+          alt: 'FTC VERTEX 15534',
+        },
+        optional: {
+          siteName: 'FTC VERTEX 15534 of Phillips Exeter Academy',
+          locale: 'en',
+        },
+      }}
+      extend={{
+        link: [{ rel: 'icon', href: '/favicon.ico' }],
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <div>
+      <div class='flex h-auto min-h-screen w-screen justify-center'>
+        <div
+          class='prose-inverse prose-lg h-auto w-full px-8 md:px-0 md:w-2/3 py-32 prose-headings:font-display prose-headings:font-bold prose-a:underline prose-a:underline-offset-2 prose-a:duration-200 hover:prose-a:text-red-500 hover:prose-a:underline-offset-4'
+        >
+          <h1 class='my-0'>{frontmatter.title}</h1>
+          <i>{date}</i>
+          <slot />
+        </div>
+      </div>
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style is:global></style>

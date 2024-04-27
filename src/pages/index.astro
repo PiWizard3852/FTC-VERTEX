@@ -1,167 +1,127 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import mainLogo from "/logo.svg";
-import lion from "/lion.svg";
-import logoWithText from "/logoWithText.svg";
-import instagram from "/instagram.svg";
-import "animate.css";
-import Typewriter from 'typewriter-effect';
+import 'animate.css'
+
+import Layout from '../layouts/Layout.astro'
+import mainLogo from '/logo.svg'
 ---
 
-<Layout title="FTC VERTEX 15534" desc="FTC VERTEX 15534 of Phillips Exeter Academy in Exeter, New Hampshire is a competitive robotics team. The team has competed in the FIRST Tech Challenege competition since 2018 and has won countless awards." author="Byran Huang">
-	<link rel="preload" as="image" href="/logo.svg">
-	<main>
-		<div class="flex h-screen w-screen items-center justify-center">
-			<!-- disabling scroll animation until new one is made -->
-			<canvas
-				id="hero-animation"
-				class="animate__animated animate__fadeIn fixed -z-50 w-full will-change-transform"
-				data-scroll
-				data-scroll-sticky
-				data-scroll-target="body"
-				data-scroll-id="canvasID"
-			>
-			</canvas>
-			<div
-				class="relative -z-10 h-1/3 w-full md:h-3/4 will-change-transform"
-				data-scroll
-				data-scroll-speed="3"
-			>
-				<img src={mainLogo} alt="" class="max-h-screen max-w-screen h-full w-full" />
-			</div>
-			<div class="absolute px-4 md:px-0 min-w-1/2 min-h-1/2">
-				<h1
-					class="animate__animated animate__fadeIn text-center font-hype text-[120px] tracking-tight md:text-[250px] drop-shadow-xl"
-					data-scroll
-					data-scroll-speed="5"
-				>
-					1 5 5 3 4
-				</h1>
-				<p
-					class="animate__animated animate__fadeIn text-center font-display text-3xl font-bold tracking-wide md:text-left"
-					data-scroll
-					data-scroll-speed="2"
-				>
-					FTC VERTEX
-				</p>
-			</div>
-		</div>
-		<h1
-			class="absolute right-0 hidden origin-top-right rotate-90 font-hype text-4xl text-[#9a1d2f] md:block"
-		>
-			<span class="px-20">XAPITI DEOT</span>
-			<span class="px-20">NON SIBI</span>
-		</h1>
-		<h1
-			class="absolute left-0 hidden origin-bottom-left rotate-90 font-hype text-4xl text-[#9a1d2f] md:block"
-		>
-			<span class="px-20">XAPITI DEOT</span>
-			<span class="px-20">NON SIBI</span>
-		</h1>
-		<div class="flex flex-wrap h-screen w-screen items-center justify-center">
-			<h1
-				class="animate__animated animate__fadeIn text-center font-hype text-2xl tracking-wide md:text-8xl"
-				data-scroll
-				data-scroll-speed="5"
-			>
-				SEE YOU AT WORLDS.
-			</h1>
-		</div>
-		<div class="flex flex-wrap h-screen w-screen items-center justify-center">
-			<h1
-				class="animate__animated animate__fadeIn text-center font-hype text-2xl tracking-wide md:text-8xl"
-				data-scroll
-				data-scroll-speed="5"
-			>
-				POWERPLAY FINALISTS.
-			</h1>
-		</div>
-		<div class="h-screen px-8 md:px-48 md:py-32">
-			<div class="max-w-[1200px]">
-				<h1
-					class="-mb-3 py-8 font-display text-6xl font-bold md:py-0 md:text-8xl"
-					data-scroll
-					data-scroll-speed="2"
-				>
-					About Us
-				</h1>
-				<p class="pl-6 font-body text-lg">
-					Founded in the fall of 2018, our team consists of a diverse
-					group of students passionate about using knowledge in
-					robotics and STEAM to benefit larger communities. Though we
-					have enjoyed enormous success, we continue to strive to
-					explore the limit of the intersection of knowledge and
-					creativity. Going into our sixth year, we are thrilled by
-					the challenges that await us in the upcoming 2023-2024
-					season!
-				</p>
-			</div>
-		</div>
-		<div class="h-screen w-screen relative flex items-center justify-center will-change-transform">
-			<iframe src="https://www.youtube.com/embed/QfmojAIfgDo" class="w-[75%] h-[75%]" title="2023 States Recap Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		</div>
-		<h1
-			class="absolute right-0 hidden origin-top-right rotate-90 font-hype text-4xl text-[#9a1d2f] md:block"
-		>
-			<span class="px-20">XAPITI DEOT</span>
-			<span class="px-20">NON SIBI</span>
-		</h1>
-	</main>
+<Layout
+  title='FTC VERTEX 15534'
+  desc='FTC VERTEX 15534 of Phillips Exeter Academy in Exeter, New Hampshire is a competitive robotics team. The team has competed in the FIRST Tech Challenege competition since 2018 and has won countless awards.'
+  author='Byran Huang'
+>
+  <link
+    rel='preload'
+    as='image'
+    href='/logo.svg'
+  />
+  <main>
+    <div class='flex h-screen w-screen items-center justify-center'>
+      <img
+        id='hero-animation'
+        class='animate__fadeIn fixed -z-50 h-screen w-full will-change-transform object-cover'
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target='body'
+        data-scroll-id='canvasID'
+        src='/banner.jpg'
+        alt='FTC VERTEX'
+      />
+    </div>
+    <div
+      class='relative -z-10 h-1/3 w-full md:h-3/4 will-change-transform'
+      data-scroll
+      data-scroll-speed='3'
+    >
+      <img
+        src={mainLogo}
+        alt='FTC VERTEX'
+        class='max-h-screen max-w-screen h-full w-full'
+      />
+    </div>
+    <div class='absolute px-4 md:px-0 min-w-1/2 min-h-1/2'>
+      <h1
+        class='animate__animated animate__fadeIn text-center font-hype text-[120px] tracking-tight md:text-[250px] drop-shadow-xl'
+        data-scroll
+        data-scroll-speed='5'
+      >
+        1 5 5 3 4
+      </h1>
+      <p
+        class='animate__animated animate__fadeIn text-center font-display text-3xl font-bold tracking-wide md:text-left'
+        data-scroll
+        data-scroll-speed='2'
+      >
+        FTC VERTEX
+      </p>
+    </div>
+  </main>
+  <h1
+    class='absolute right-0 hidden origin-top-right rotate-90 font-hype text-4xl text-[#9a1d2f] md:block'
+  >
+    <span class='px-20'>XAPITI DEOT</span>
+    <span class='px-20'>NON SIBI</span>
+  </h1>
+  <h1
+    class='absolute left-0 hidden origin-bottom-left rotate-90 font-hype text-4xl text-[#9a1d2f] md:block'
+  >
+    <span class='px-20'>XAPITI DEOT</span>
+    <span class='px-20'>NON SIBI</span>
+  </h1>
+  <div class='flex flex-wrap h-screen w-screen items-center justify-center'>
+    <h1
+      class='animate__animated animate__fadeIn text-center font-hype text-2xl tracking-wide md:text-8xl'
+      data-scroll
+      data-scroll-speed='5'
+    >
+      SEE YOU NEXT YEAR.
+    </h1>
+  </div>
+  <div class='flex flex-wrap h-screen w-screen items-center justify-center'>
+    <h1
+      class='animate__animated animate__fadeIn text-center font-hype text-2xl tracking-wide md:text-8xl'
+      data-scroll
+      data-scroll-speed='5'
+    >
+      CENTERSTAGE EDISON FINALISTS.
+    </h1>
+  </div>
+  <div class='flex flex-wrap h-screen w-screen items-center justify-center'>
+    <h1
+      class='animate__animated animate__fadeIn text-center font-hype text-2xl tracking-wide md:text-8xl'
+      data-scroll
+      data-scroll-speed='5'
+    >
+      POWERPLAY FINALISTS.
+    </h1>
+  </div>
+  <div
+    class='flex flex-col flex-wrap h-screen w-screen items-center justify-center'
+  >
+    <div
+      class='max-w-[1200px]'
+      data-scroll
+      data-scroll-speed='1'
+    >
+      <h1
+        class='animate__animated animate__fadeIn text-center font-hype text-2xl tracking-wide md:text-8xl'
+      >
+        About Us
+      </h1>
+      <p class='pl-6 font-body text-xl text-center'>
+        Founded in the fall of 2018, our team consists of a diverse group of
+        students passionate about using knowledge in robotics and STEAM to
+        benefit larger communities. Though we have enjoyed enormous success, we
+        continue to strive to explore the limit of the intersection of knowledge
+        and creativity. Going into our seventh year, we are thrilled by the
+        challenges that await us in the upcoming 2024-2025 season!
+      </p>
+    </div>
+  </div>
+  <h1
+    class='absolute right-0 hidden origin-top-right rotate-90 font-hype text-4xl text-[#9a1d2f] md:block'
+  >
+    <span class='px-20'>XAPITI DEOT</span>
+    <span class='px-20'>NON SIBI</span>
+  </h1>
 </Layout>
-
-<script>
-	import LocomotiveScroll from "locomotive-scroll";
-
-	const html = document.documentElement;
-
-	const canvas = document.getElementById("hero-animation");
-	const context = canvas.getContext("2d");
-
-	const scroll = new LocomotiveScroll({
-		el: document.querySelector("[data-scroll-container]") as HTMLElement,
-		smooth: true,
-		resetNativeScroll: true,
-	});
-
-	scroll.on("scroll", (args) => {
-		// Get all current elements : args.currentElements
-		if (typeof args.currentElements["canvasID"] === "object") {
-			let progress = args.currentElements["canvasID"].progress;
-			const frameIndex = Math.min(
-				frameCount - 1,
-				Math.ceil(progress * frameCount)
-			);
-			requestAnimationFrame(() => updateImage(frameIndex + 1));
-		}
-	});
-
-	const frameCount = 201;
-
-	// const currentFrame = (index) =>
-	// 	`/scroll-animation/img${index.toString().padStart(5, "0")}.jpg`;
-	const currentFrame = () =>
-		`/banner1.JPG`;
-
-	const images = [null];
-	const preloadImages = () => {
-		for (let i = 1; i < frameCount; i++) {
-			images[i] = new Image();
-			images[i].src = currentFrame(i);
-		}
-	};
-
-	const img = new Image();
-	img.src = currentFrame(1);
-	canvas.width = 6000;
-	canvas.height = 4000;
-	img.onload = function () {
-		context.drawImage(img, 0, 0);
-	};
-
-	const updateImage = (index) => {
-		img.src = currentFrame(index);
-		context.drawImage(images[index], 0, 0);
-	};
-
-	preloadImages();
-</script>

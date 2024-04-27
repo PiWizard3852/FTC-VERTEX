@@ -32,7 +32,7 @@ const { title, desc } = Astro.props;
 		<link rel="preload" href="/fonts/pixelpowerline.ttf" as="font" type="font/opentype" crossorigin>
 		<link rel="stylesheet" href="/styles/global.css">
 		<SEO
-		title={title + " - VERTEX Robotics Phillips Exeter Academy"}
+		title={title}
 		description={desc}
 		openGraph={
 			{
@@ -54,9 +54,7 @@ const { title, desc } = Astro.props;
 			}
 		}
 		extend={{
-		  // extending the default link tags
 		  link: [{ rel: "icon", href: "/favicon.ico" }],
-		  // extending the default meta tags
 		}}
 		/>
 	</head>

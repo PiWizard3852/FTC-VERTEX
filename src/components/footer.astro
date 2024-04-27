@@ -1,34 +1,43 @@
 ---
-import mainLogo from "/logo.svg";
-import lion from "/lion.svg";
-import logoWithText from "/logoWithText.svg";
-import instagram from "/instagram.svg";
-import "animate.css";
+import 'animate.css'
+
+import instagram from '/instagram.svg'
+import logoWithText from '/logoWithText.svg'
 ---
 
 <footer
-	class="flex items-center flex-col md:flex-row justify-between bg-neutral-50 md:py-10 md:px-24 py-8 px-6 text-black"
+  class='flex items-center flex-col md:flex-row justify-between bg-neutral-50 md:py-10 md:px-24 py-8 px-6 text-black'
 >
-	<div class="flex flex-col justify-start gap-5 pb-6">
-		<a href="/" aria-label="FTC VERTEX Logo Horizontal">
-			<img src={logoWithText} alt="" class="aspect-auto md:w-72 w-52 h-24 md:h-32" />
-		</a>
-	</div>
-	<div
-		class="flex flex-row flex-wrap md:flex-col justify-center md:justify-end gap-2 md:text-right font-display font-bold text-sm md:text-md"
-	>
-		<a href="/">Home</a>
-		<a href="/ourteam">Our Team</a>
-		<a href="/achievements">Achievements</a>
-		<a href="/posts">Outreach</a>
-		<a href="/vtxcads">VTX CADs</a>
-		<a href="/store">Store</a>
-		<a
-			href="https://www.instagram.com/ftcvertex/"
-			class="flex md:flex-row-reverse"
-			aria-label="Instagram Link"
-		>
-			<img src={instagram} alt="" class="h-6 w-6 md:h-8 md:w-8" />
-		</a>
-	</div>
+  <div class='flex flex-col justify-start gap-5 pb-6'>
+    <a
+      href='/'
+      aria-label='FTC VERTEX Logo Horizontal'
+    >
+      <img
+        src={logoWithText}
+        alt=''
+        class='aspect-auto md:w-72 w-52 h-24 md:h-32'
+      />
+    </a>
+  </div>
+  <div
+    class='flex flex-row flex-wrap md:flex-col justify-center md:justify-end gap-2 md:text-right font-display font-bold text-sm md:text-md'
+  >
+    <a href='/'>Home</a>
+    <a href='/ourteam'>Our Team</a>
+    <a href='/achievements'>Achievements</a>
+    <a href='/outreach'>Outreach</a>
+    <a href='/outreach/vtxcads-v3'>VTX CADs</a>
+    <a
+      href='https://www.instagram.com/ftcvertex/'
+      class='flex md:flex-row-reverse'
+      aria-label='Instagram Link'
+    >
+      <img
+        src={instagram}
+        alt=''
+        class='h-6 w-6 md:h-8 md:w-8'
+      />
+    </a>
+  </div>
 </footer>
